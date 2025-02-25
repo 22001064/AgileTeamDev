@@ -12,7 +12,7 @@ const Home = () => {
         <div className='buttons-area'>
           <div className='row' id='btn-row'>
             <div className='left col-lg-6'>
-              <Buttonbrn title={"Login"}/>
+              <Buttonbrn title={"Login"} link={"/nestcafe/login"}/>
             </div>
             <div className='right col-lg-6'>
               <Buttonbrn title={"Support"}/>
