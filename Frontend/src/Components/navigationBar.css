@@ -1,0 +1,12 @@
+.nav-area {
+    background-color: #D5BB9A;
+    
+}
+#logo:hover {
+    animation: pulse; 
+    animation-duration: 1s;
+} 
+#links {
+    font-size: 1.4rem;
+    align-items: center;    
+}

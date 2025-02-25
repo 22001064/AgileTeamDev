@@ -1,0 +1,19 @@
+footer {
+    background-color: #D5BB9A;
+}
+#social {
+    width: 15%;    
+}
+.longlogo {    
+    text-align: left;    
+    margin-left: 5vh;
+}
+@media screen and (max-width:960px) {
+    #social {
+        width: 80%;
+    }
+    .longlogo {
+        text-align: center;
+        margin: 0 auto;
+    }
+}

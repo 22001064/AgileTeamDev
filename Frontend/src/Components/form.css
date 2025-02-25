@@ -1,0 +1,35 @@
+.image {
+    justify-content: center;
+    text-align: center;
+    margin: 30px;
+        
+}
+#loginlogo{
+    width: 25%;    
+}
+.form-area {
+    width: 60vh;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 5vh;
+}
+#loginbtn {
+    width: 50vh;
+    background-color: #401201;
+    color: antiquewhite;
+}
+#loginbtn:hover {
+    background-color: #D5BB9A;
+    color: black;
+}
+@media screen and (max-width:960px) {
+    .form-area {
+        width: 80%;
+    }
+    #loginlogo {
+        width: 100%;
+    }
+    #loginbtn {
+        width: 80%;
+    }
+}
