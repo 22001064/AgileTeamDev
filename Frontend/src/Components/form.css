@@ -1,20 +1,23 @@
 .image {
     justify-content: center;
     text-align: center;
-    margin: 30px;
-        
+    margin: 30px; 
+             
 }
 #loginlogo{
-    width: 25%;    
+    width: 27%; 
+    opacity: 0.6;   
 }
 .form-area {
+    background-color: aliceblue;    
     width: 60vh;
-    text-align: center;
+    text-align: left;
     margin: auto;
     margin-bottom: 5vh;
+    padding-top: 3vh;
 }
 #loginbtn {
-    width: 50vh;
+    width: 100%;
     background-color: #401201;
     color: antiquewhite;
 }

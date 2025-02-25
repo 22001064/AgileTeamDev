@@ -9,8 +9,48 @@
   height: 100%;
   position: fixed;
   overflow: auto;
-  background-color: #EBF1F2;
+  background-color: #D2D3D9;
 }
 .home-area {
   margin: 20vh;
+}
+.homeimage {
+  justify-content: center;
+    text-align: center;
+    margin: 50px;     
+}
+#team {
+  width: auto;
+  height: auto;
+  opacity: 0.9;
+}
+.buttons-area {
+  margin: 5vh;
+  width: auto;
+  display: flex;  
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+#btn-row {  
+  justify-content: center;
+  align-items: center;
+  width: 55%;  
+}
+.right {
+  margin-right: 0;
+  color: aliceblue;
+}
+.left {
+  margin-left: 0;
+}
+@media screen and (max-width:1500px) {
+  #btn-row {
+    width: 70%;
+  }
+}
+@media screen and (max-width:960px) {
+  #team {
+    width: 100%;
+  }
 }
