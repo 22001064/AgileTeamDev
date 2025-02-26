@@ -28,10 +28,7 @@ const UserForm = () => {
     };
 
     return (
-    <>   
-        <div className='image'>
-            <img src="./src/assets/nestcafelogolong.png?raw=true" alt="Company logo" className='rounded' id='loginlogo'/>
-        </div>
+    <>           
         <div className='form-area rounded'>            
             <div className='mt-4 me-4 mx-4 pb-4 auto'>
                 <Tabs
@@ -101,8 +98,8 @@ const UserForm = () => {
                     </Form>
                 </Tab>
             </Tabs>                
-            </div> 
         </div> 
+     </div>   
     </>         
     );
 }

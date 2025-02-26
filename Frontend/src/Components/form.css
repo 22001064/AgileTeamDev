@@ -1,18 +1,17 @@
 .image {
     justify-content: center;
     text-align: center;
-    margin: 20px; 
+    margin: 5px; 
              
 }
 #loginlogo{
-    width: 30%; 
+    width: 100%; 
     opacity: 0.7;   
 }
 .form-area {
     background-color: #F1F1F1;    
-    width: 60vh;
-    text-align: left;
-    margin: auto;
+    width: 100%;
+    text-align: left;    
     margin-top: 5vh;
     margin-bottom: 5vh;
     padding-top: 1vh;

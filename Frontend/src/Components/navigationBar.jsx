@@ -13,7 +13,9 @@ const NavigationBar = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto justify-content-end flex-grow-1 pe-4" id='links'>
                             <Nav.Link className='link' href="/nestcafe/">Home</Nav.Link>
-                            <Nav.Link className='link' href="/nestcafe/login">Login</Nav.Link>                                                         
+                            <Nav.Link className='link' href="/nestcafe/login">Login</Nav.Link>
+                            <img src="./src/assets/customer-service-support.svg" alt="Support icon"  id='supportlogo'/>
+                            <Nav.Link className='link' href="#">Support</Nav.Link>                                                         
                         </Nav>
                     </Navbar.Collapse>
             </Container>
