@@ -1,0 +1,18 @@
+.nav-area {
+    background-color: #D5BB9A;
+    
+}
+#logo:hover {
+    animation: pulse; 
+    animation-duration: 1s;
+} 
+#links {
+    font-size: 1.4rem;
+    align-items: center;    
+}
+#supportlogo {
+    width: 4%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: 2vh;
+}
