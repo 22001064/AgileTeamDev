@@ -14,7 +14,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Home from './pages/home.js';
+
 import Login from './pages/login.js';
 ;
 
@@ -22,7 +22,7 @@ import Login from './pages/login.js';
 const router = createBrowserRouter([
   { path: "/", element: <App/>,
     children: [
-    { path: "/", element: <Home /> },
+    { path: "/", element: <Login /> },
     { path: "/nestcafe/login", element: <Login /> },        
     ] 
   },

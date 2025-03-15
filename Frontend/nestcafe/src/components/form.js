@@ -7,7 +7,6 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import './form.css';
 
 const UserForm = () => {
     const [validated, setValidated] = useState(false);
