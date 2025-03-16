@@ -1,4 +1,4 @@
-/* ========================================= General/Unknown =========================================*/
+/* ========================================= Login =========================================*/
 
 * {
   box-sizing: border-box;
@@ -12,6 +12,11 @@
   position: fixed;
   overflow: auto;
   background-color: #D2D3D9;
+}
+
+#loginlogo{
+  margin-bottom: -10px;
+  margin-top: -20px;
 }
 
 #team {
@@ -34,12 +39,12 @@
   width: 100%;
   margin-top: 60%;
   margin-left: 2vh;  
-}
+} 
 #teamwork {
   width: 100%;
 }
-.buttons-area {
-  margin-top: 3vh;
+.buttons-area {     
+  margin-top: -25px;
   margin-bottom: 3vh;
   width: auto;
   display: flex;  
@@ -55,8 +60,8 @@
   align-items: center;
   width: 50%;  
 }
-.right {
-  margin-right: 0;
+.right {   
+  margin-right: 0; 
   color: aliceblue;
 }
 .left {
@@ -267,4 +272,4 @@ footer {
   }
 }
 
- 
+               
