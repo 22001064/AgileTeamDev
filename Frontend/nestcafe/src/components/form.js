@@ -7,6 +7,7 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import { useNavigate } from "react-router-dom";
 
 const UserForm = () => {
     const [validated, setValidated] = useState(false);
@@ -25,6 +26,7 @@ const UserForm = () => {
         }
         setValidated(true);        
     };
+    const navigate = useNavigate();
 
     return (
     <>           
@@ -64,7 +66,7 @@ const UserForm = () => {
                                 <Form.Check type="checkbox" label="Remember me" />
                             </Form.Group>
                         </Row>                                  
-                        <Button variant='outline-dark' size='lg' type="submit" id='loginbtn'>Login</Button>                    
+                        <Button variant='outline-dark' size='lg' type="submit" id='loginbtn' onClick={() => navigate("/nestcafe/pages/ToDO")}>Login</Button>                    
                     </Form>
                 </Tab>
                 <Tab eventKey="admin" title="Admin">

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.js'
 import 'animate.css' // animation package
 import './index.css'
+import ToDO from './pages/toDO.js'
 
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
   { path: "/", element: <App/>,
     children: [
     { path: "/", element: <Login /> },
-    { path: "/nestcafe/login", element: <Login /> },        
+    { path: "/nestcafe/pages/ToDO", element: <ToDO /> },        
     ] 
   },
 ]);
