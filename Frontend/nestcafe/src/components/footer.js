@@ -1,5 +1,5 @@
 import React from 'react';
-import './footer.css';
+
 
 const Footer = () => {
     return (
@@ -23,15 +23,7 @@ const Footer = () => {
                     {/*Grid column*/}
                     {/*Grid column*/}
                     <div className="col-lg-4 col-md-12 mb-4 mb-md-0">
-                        <h6 className="text-uppercase fw-bold">Site Links</h6>
-                        <ul className="list-unstyled mb-0">
-                            <li className='link'>
-                                <a href="/" className="text-black">Home</a>
-                            </li>
-                            <li className='link'>
-                                <a href="/nestcafe/login" className="text-black">Login</a>
-                            </li>                                                   
-                        </ul>
+                       
                     </div>
                     {/*Grid column*/}                   
                 </div>

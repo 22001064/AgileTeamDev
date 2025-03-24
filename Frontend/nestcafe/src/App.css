@@ -1,3 +1,5 @@
+/* ========================================= Login =========================================*/
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,14 +13,12 @@
   overflow: auto;
   background-color: #D2D3D9;
 }
-.home-area {
-  margin: 20vh;
+
+#loginlogo{
+  margin-bottom: -10px;
+  margin-top: -20px;
 }
-.homeimage {
-  justify-content: center;
-    text-align: center;
-    margin: 50px;     
-}
+
 #team {
   width: auto;
   height: auto;
@@ -39,12 +39,12 @@
   width: 100%;
   margin-top: 60%;
   margin-left: 2vh;  
-}
+} 
 #teamwork {
   width: 100%;
 }
-.buttons-area {
-  margin-top: 3vh;
+.buttons-area {     
+  margin-top: -25px;
   margin-bottom: 3vh;
   width: auto;
   display: flex;  
@@ -60,8 +60,8 @@
   align-items: center;
   width: 50%;  
 }
-.right {
-  margin-right: 0;
+.right {   
+  margin-right: 0; 
   color: aliceblue;
 }
 .left {
@@ -84,7 +84,7 @@
   }
   .left {
     margin-bottom: 5vh;
-  }
+  } 
   #supportlogo {
     display: none;
   }
@@ -103,7 +103,7 @@
   .form-area {
     margin-left: 3vh;
   }
-  
+    
 }
 @media screen and (max-width:450px) {
   .image1 {
@@ -118,4 +118,165 @@
     margin-bottom: 2vh;
     margin-left: 1vh;
   }
+}
+
+/* ========================================= Footer =========================================*/
+
+footer {
+  background-color: #D5BB9A;
+ 
+    
+}
+.longlogo {           
+  text-align: center;
+}
+#footertext {
+  text-align: center;
+  margin: 0 auto;
+  padding: 1vh;
+}
+
+@media screen and (max-width:960px) {
+  #social {
+      width: 80%;
+  }
+  .longlogo {
+      text-align: center;
+      margin: 0 auto;
+  }
+}
+
+/* ========================================= Form =========================================*/
+
+.image {
+  justify-content: center;
+  text-align: center;
+  margin: 5px; 
+           
+}
+#loginlogo{
+  width: 100%; 
+  opacity: 0.7;   
+}
+.form-area {
+  background-color: #F1F1F1;    
+  width: 100%;
+  text-align: left;    
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  padding-top: 1vh;
+}
+#loginbtn {
+  width: 100%;
+  background-color: #401201;
+  color: aliceblue;
+}
+#loginbtn:hover {
+  background-color: #D5BB9A;
+  transition-duration: 0.5s;
+  color: black;
+}
+@media screen and (max-width:960px) {
+  .form-area {
+      width: 80%;
+  } 
+  #loginlogo {
+      width: 100%;
+  }   
+  
+}
+
+
+/* ========================================= Header/Breadcrum =========================================*/
+
+/* .pageheader-main {
+  background: url("../assets/background.png") no-repeat top;    
+     
+}
+.pageheader-content {
+  margin-top: 5vh; 
+  margin-bottom: 5vh;   
+}
+ */
+
+
+
+ /* ========================================= NavigationBar =========================================*/
+
+ .nav-area {
+  background-color: #D5BB9A;
+  
+}
+#logo:hover {
+  animation: pulse; 
+  animation-duration: 1s;
+} 
+#links {
+  font-size: 1.4rem;
+  align-items: center;    
+}
+#supportlogo {
+  width: 4%;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  margin-left: 2vh;
+}
+
+
+ /* ========================================= Ribbon =========================================*/
+
+ .ribbon-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+  text-align: center;   
+  position: relative;
+  margin-top: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+}
+.ribbon {    
+  background-color: #401201;       
+  width: calc(100% - 600px);
+  position: relative;
+}
+#ribbontext {
+  font-family: "Playwrite IT Moderna", serif;
+  font-style: italic;
+  color: aliceblue;
+}
+.ribbon::before {
+  position: absolute;
+  content: '';
+  border-top: 10px solid #401201;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #401201;
+  border-bottom: 10px solid transparent;
+  top: 100%;
+  left: 0;
+}
+.ribbon::after {
+  position: absolute;
+  content: '';
+  border-top: 10px solid #401201;
+  border-right: 10px solid transparent;
+  border-left: 10px solid #401201;
+  border-bottom: 10px solid transparent;
+  top: 100%;
+  right: 0;
+}
+@media screen and (max-width:1300px) {
+  .ribbon {
+    width: 90%;
+  }
+}
+
+                 
+
+/* ========================================= Sidebar =========================================*/
+
+
+.taskCol{
+  border: black;
 }

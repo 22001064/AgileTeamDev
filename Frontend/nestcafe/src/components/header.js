@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './header.css'
+
 
 const Header = ({title, curPage}) => {
   return (
     <div className="pageheader-main">
-            <div className="container">
+            {/* <div className="container">
                 <div className="row">
                     <div className="col-12">
                         <div className="pageheader-content text-align-center text-center">
@@ -19,7 +19,7 @@ const Header = ({title, curPage}) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
   )
 }
