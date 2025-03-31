@@ -36,8 +36,9 @@ const UserForm = () => {
                     defaultActiveKey="user"
                     id="uncontrolled-tab-example"
                     className="mb-3"
+                    style={{background : '#9c8386'}}
                 >
-                <Tab eventKey="user" title="User">  
+                <Tab eventKey="user" title="User"  >  
                     <Form noValidate validated={validated} onSubmit={handleFormSubmit}>                    
                         <Row className="mb-3">
                             <Form.Group as={Col} md="12" controlId="validationCustom03">
@@ -95,7 +96,7 @@ const UserForm = () => {
                                 </FloatingLabel>
                             </Form.Group>                            
                         </Row>                                  
-                        <Button variant='outline-dark' size='lg' type="submit" id='loginbtn'>Login</Button>                    
+                        <Button variant='outline-dark' size='lg' type="submit" id='loginbtn' onClick={() => navigate("/nestcafe/pages/overview")}>Login</Button>                    
                     </Form>
                 </Tab>
             </Tabs>                

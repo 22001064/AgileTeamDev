@@ -1,12 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Button, InputGroup, FormControl } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import { Outlet, Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
-const Sidebar = ({children}) => {
- // Sidebar items and their paths
- const sidebarItems = [
+import { NavLink, Link } from "react-router-dom";
+
+const Dashboard = ({ children, onAddTask }) => {
+  // Dashboard items and their paths
+  const DashboardItems = [
+    { name: "Overview", path: "/nestcafe/pages/overview" },
     { name: "Summary", path: "/nestcafe/pages/ToDO" },
     { name: "Backlog", path: "/" },
     { name: "Timeline", path: "/" },
@@ -26,32 +26,34 @@ const Sidebar = ({children}) => {
             <FormControl placeholder="SEARCH BAR" />
           </InputGroup>
         </Col>
-        <Col md={3} className="d-flex justify-content-end align-items-center">
-          <Button variant="primary" className="me-3">ADD A TASK</Button>
-          <div className="me-3 position-relative">
+        <Col md={3} className="d-flex align-items-center">
+          <Button id="AddTask" variant="primary" className="me-3" onClick={onAddTask}>
+            ADD A TASK
+          </Button>
+          <div id="logged" className="me-3 position-relative">
             <i className="bi bi-gear-fill fs-4"></i>
             <span className="position-absolute top-0 start-100 translate-middle badge bg-danger">
               1
             </span>
           </div>
           <div className="text-center">
-          <img
-                  src="https://avatars.githubusercontent.com/u/81866624?v=4"
-                  alt="User avatar"
-                  className="rounded-circle"
-                  width="40"
-                />
-                <div>USERNAME</div>
-                <Link to="/" className="btn btn-light w-100 my-1 text-start">Logout</Link>
-            </div>
+            <img
+              src="https://avatars.githubusercontent.com/u/81866624?v=4"
+              alt="User avatar"
+              className="rounded-circle"
+              width="40"
+            />
+            <div>USERNAME</div>
+            <Link to="/" className="btn btn-light w-100 my-1 text-start">Logout</Link>
+          </div>
         </Col>
       </Row>
 
-      {/* Sidebar + Main Content */}
+      {/* Dashboard + Main Content */}
       <Row className="flex-grow-1">
-        {/* Sidebar */}
+        {/* Left Sidebar */}
         <Col md={2} className="bg-light d-flex flex-column p-3">
-          {sidebarItems.map((item) => (
+          {DashboardItems.map((item) => (
             <NavLink
               key={item.name}
               to={item.path}
@@ -73,4 +75,4 @@ const Sidebar = ({children}) => {
   );
 };
 
-export default Sidebar;
+export default Dashboard;

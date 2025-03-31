@@ -4,7 +4,8 @@ import App from './App.js'
 import 'animate.css' // animation package
 import './index.css'
 import ToDO from './pages/toDO.js'
-
+import Overview from './pages/overview.js'
+import BacklogUser from './pages/backlogUser.js'
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
@@ -24,7 +25,9 @@ const router = createBrowserRouter([
   { path: "/", element: <App/>,
     children: [
     { path: "/", element: <Login /> },
-    { path: "/nestcafe/pages/ToDO", element: <ToDO /> },        
+    { path: "/nestcafe/pages/ToDO", element: <ToDO /> },
+    { path: "/nestcafe/pages/overview", element: <Overview /> },
+    { path: "/nestcafe/pages/backlogUser", element: <BacklogUser />}        
     ] 
   },
 ]);

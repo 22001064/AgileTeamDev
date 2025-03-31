@@ -240,6 +240,8 @@ footer {
   background-color: #401201;       
   width: calc(100% - 600px);
   position: relative;
+  align-items: top;
+  margin-bottom: 10px;
 }
 #ribbontext {
   font-family: "Playwrite IT Moderna", serif;
@@ -274,9 +276,14 @@ footer {
 
                  
 
-/* ========================================= Sidebar =========================================*/
+/* ========================================= Dashboard =========================================*/
 
 
 .taskCol{
   border: black;
+}
+
+#logged{
+  padding-left: 100px;
+
 }

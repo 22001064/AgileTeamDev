@@ -5,7 +5,7 @@ import Buttonbrn from '../components/button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import Footer from '../components/footer';
 // Import Modal and Button for the popup
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -70,6 +70,7 @@ const Login = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+      <Footer />
     </>
   );
 };

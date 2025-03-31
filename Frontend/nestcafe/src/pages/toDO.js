@@ -1,11 +1,11 @@
 import React from "react";
 import { Row, Col, Card } from "react-bootstrap";
-import Sidebar from '../components/sidebar';
-
+import Dashboard from '../components/dashboard';
+import Ribbon from '../components/ribbon';
 export default function ToDO() {
     return (
-        <Sidebar>
-          <h2 className="mb-4">Task Management</h2>
+        <Dashboard>
+          <Ribbon />
       <Row>
         <Col>
           <h3>TO DO</h3>
@@ -68,7 +68,7 @@ export default function ToDO() {
           </Card>
         </Col>
       </Row>
-        </Sidebar>
+        </Dashboard>
       );
 }
 

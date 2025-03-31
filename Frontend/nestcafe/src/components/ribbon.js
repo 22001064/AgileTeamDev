@@ -11,7 +11,7 @@ const Ribbon = () => {
                     {/*Grid column*/}
                     <div className="col-md-12 mb-md-0">
                         <h4 className='pt-3 pb-2' id="ribbontext">
-                            NestCafe
+                            Task Management 
                         </h4>                       
                     </div> 
                     {/*Grid column*/}                          
