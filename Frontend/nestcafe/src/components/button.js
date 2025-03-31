@@ -18,7 +18,7 @@ const Buttonbrn = ({ title, onClick }) => {
     </div>
   );
 };
-
+ 
 export default Buttonbrn;
 
 
