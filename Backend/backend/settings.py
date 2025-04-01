@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -141,3 +140,5 @@ JAZZMIN_SETTINGS = {
     'show_sidebar':True,
     'show_ui_builder':True,
 }
+
+AUTH_USER_MODEL = 'users.CustomUser'
