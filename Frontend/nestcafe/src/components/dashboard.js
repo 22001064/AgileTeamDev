@@ -8,7 +8,7 @@ const Dashboard = ({ children, onAddTask }) => {
   const DashboardItems = [
     { name: "Overview", path: "/nestcafe/pages/overview" },
     { name: "Summary", path: "/nestcafe/pages/ToDO" },
-    { name: "Backlog", path: "/" },
+    { name: "Backlog", path: "/nestcafe/pages/backlogUser" },
     { name: "Timeline", path: "/" },
     { name: "Board", path: "/board" },
     { name: "Reports", path: "/reports" },
