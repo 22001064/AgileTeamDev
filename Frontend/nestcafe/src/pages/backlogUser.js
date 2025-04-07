@@ -1,46 +1,47 @@
 import React, { useState } from 'react';
-import { Container, Table, Badge, Modal, Form, Button } from 'react-bootstrap';
+import { Container, Table, Modal, Form, Button, Badge } from 'react-bootstrap';
 import Dashboard from '../components/dashboard';
 
-// BacklogUser component manages its own task list and handles adding new tasks.
 const BacklogUser = () => {
-  // Initial dummy tasks
+  // Initial dummy tasks including priority and due date
   const [tasks, setTasks] = useState([
-    { id: 1, task: 'Implement login functionality', assignee: 'Alice', status: 'To Do' },
-    { id: 2, task: 'Design dashboard layout', assignee: 'Bob', status: 'In Progress' },
-    { id: 3, task: 'Set up database schema', assignee: 'Charlie', status: 'Complete' },
+    { id: 1, task: 'Implement login functionality', assignee: 'Alice', status: 'To Do', priority: 'High', dueDate: '2025-03-15' },
+    { id: 2, task: 'Design dashboard layout', assignee: 'Bob', status: 'In Progress', priority: 'Medium', dueDate: '2025-03-20' },
+    { id: 3, task: 'Set up database schema', assignee: 'Charlie', status: 'Complete', priority: 'Low', dueDate: '2025-03-10' },
   ]);
 
-  // State to show/hide the Add Task modal
+  // Modal state for adding a new task
   const [showModal, setShowModal] = useState(false);
-  // New task data being entered by the user
-  const [newTask, setNewTask] = useState({ task: '', assignee: '', status: 'To Do' });
+  // New task info (status defaults to "To Do")
+  const [newTask, setNewTask] = useState({ task: '', assignee: '', priority: 'Low', dueDate: '' });
 
-  // Called when the Dashboard’s “ADD A TASK” button is clicked.
+  // Open the Add Task modal (triggered from the Dashboard button)
   const openAddTaskModal = () => {
     setShowModal(true);
   };
 
-  // Called on modal form field changes
+  // Handle changes for the Add Task modal form fields
   const handleModalChange = (e) => {
     const { name, value } = e.target;
     setNewTask((prev) => ({ ...prev, [name]: value }));
   };
 
-  // When the user submits the modal form, add the new task to state
+  // Handle adding a new task (status defaults to "To Do")
   const handleAddTask = () => {
     const id = tasks.length ? tasks[tasks.length - 1].id + 1 : 1;
-    setTasks([...tasks, { id, ...newTask }]);
-    // Reset the new task form and close modal
-    setNewTask({ task: '', assignee: '', status: 'To Do' });
+    const taskToAdd = { id, ...newTask, status: 'To Do' };
+    setTasks([...tasks, taskToAdd]);
+    setNewTask({ task: '', assignee: '', priority: 'Low', dueDate: '' });
     setShowModal(false);
+  };
+
+  // Handle changing the status of an existing task
+  const handleStatusChange = (id, newStatus) => {
+    setTasks(tasks.map(task => task.id === id ? { ...task, status: newStatus } : task));
   };
 
   return (
     <>
-      {/* Wrap the page content with Dashboard. 
-          Note: Update your Dashboard component so that it accepts an onAddTask prop 
-          and assigns it to the Add Task button’s onClick handler. */}
       <Dashboard onAddTask={openAddTaskModal}>
         <Container fluid className="p-4">
           <h2 className="mb-4">User Backlog</h2>
@@ -49,31 +50,41 @@ const BacklogUser = () => {
               <tr>
                 <th>#</th>
                 <th>Task &amp; Assignee</th>
+                <th>Priority</th>
+                <th>Due Date</th>
                 <th>Status</th>
               </tr>
             </thead>
             <tbody>
               {tasks.map((task) => (
                 <tr key={task.id}>
-                  <td>{`TASK ${task.id}`}</td>
+                  {/* Task Number */}
+                  <td>{`TSK ${task.id}`}</td>
+                  
+                  {/* Task description and assignee */}
                   <td>
                     <div>{task.task}</div>
                     <div className="mt-1">
                       <Badge bg="info">{task.assignee}</Badge>
                     </div>
                   </td>
+                  
+                  {/* Task Priority */}
+                  <td>{task.priority}</td>
+                  
+                  {/* Due Date */}
+                  <td>{task.dueDate}</td>
+                  
+                  {/* Editable Task Status */}
                   <td>
-                    {task.status === 'To Do' && (
-                      <Badge bg="warning" text="dark">
-                        To Do
-                      </Badge>
-                    )}
-                    {task.status === 'In Progress' && (
-                      <Badge bg="primary">In Progress</Badge>
-                    )}
-                    {task.status === 'Complete' && (
-                      <Badge bg="success">Complete</Badge>
-                    )}
+                    <Form.Select
+                      value={task.status}
+                      onChange={(e) => handleStatusChange(task.id, e.target.value)}
+                    >
+                      <option value="To Do">To Do</option>
+                      <option value="In Progress">In Progress</option>
+                      <option value="Complete">Complete</option>
+                    </Form.Select>
                   </td>
                 </tr>
               ))}
@@ -109,14 +120,28 @@ const BacklogUser = () => {
                 onChange={handleModalChange}
               />
             </Form.Group>
-            <Form.Group controlId="formStatus" className="mb-3">
-              <Form.Label>Status</Form.Label>
-              <Form.Select name="status" value={newTask.status} onChange={handleModalChange}>
-                <option value="To Do">To Do</option>
-                <option value="In Progress">In Progress</option>
-                <option value="Complete">Complete</option>
+            <Form.Group controlId="formPriority" className="mb-3">
+              <Form.Label>Priority</Form.Label>
+              <Form.Select
+                name="priority"
+                value={newTask.priority}
+                onChange={handleModalChange}
+              >
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
               </Form.Select>
             </Form.Group>
+            <Form.Group controlId="formDueDate" className="mb-3">
+              <Form.Label>Due Date</Form.Label>
+              <Form.Control
+                type="date"
+                name="dueDate"
+                value={newTask.dueDate}
+                onChange={handleModalChange}
+              />
+            </Form.Group>
+            <p className="text-muted">New tasks are marked as "To Do" by default.</p>
           </Form>
         </Modal.Body>
         <Modal.Footer>

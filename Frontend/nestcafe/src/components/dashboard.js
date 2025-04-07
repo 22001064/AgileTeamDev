@@ -9,7 +9,7 @@ const Dashboard = ({ children, onAddTask }) => {
     { name: "Overview", path: "/nestcafe/pages/overview" },
     { name: "Summary", path: "/nestcafe/pages/ToDO" },
     { name: "Backlog", path: "/nestcafe/pages/backlogUser" },
-    { name: "Timeline", path: "/" },
+    { name: "Timeline", path: "/nestcafe/pages/timeline" },
     { name: "Board", path: "/board" },
     { name: "Reports", path: "/reports" },
     { name: "Forms", path: "/forms" },

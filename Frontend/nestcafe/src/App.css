@@ -187,19 +187,6 @@ footer {
 }
 
 
-/* ========================================= Header/Breadcrum =========================================*/
-
-/* .pageheader-main {
-  background: url("../assets/background.png") no-repeat top;    
-     
-}
-.pageheader-content {
-  margin-top: 5vh; 
-  margin-bottom: 5vh;   
-}
- */
-
-
 
  /* ========================================= NavigationBar =========================================*/
 
@@ -237,7 +224,7 @@ footer {
   z-index: 1;
 }
 .ribbon {    
-  background-color: #401201;       
+  background-color: #401201;     
   width: calc(100% - 600px);
   position: relative;
   align-items: top;
@@ -286,4 +273,16 @@ footer {
 #logged{
   padding-left: 100px;
 
+}
+
+/* ========================================= toDO =========================================*/
+#todoRow {
+  display: flex;
+  margin-top: 5vh;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  width: 90%;
+  height: auto;
+  background-color: #D5BB9A;
+  border-radius: 10px;
 }
