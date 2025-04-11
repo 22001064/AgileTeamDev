@@ -10,10 +10,6 @@ const Dashboard = ({ children, onAddTask }) => {
     { name: "Summary", path: "/nestcafe/pages/ToDO" },
     { name: "Backlog", path: "/nestcafe/pages/backlogUser" },
     { name: "Timeline", path: "/nestcafe/pages/timeline" },
-    { name: "Board", path: "/board" },
-    { name: "Reports", path: "/reports" },
-    { name: "Forms", path: "/forms" },
-    { name: "Goals", path: "/goals" },
   ];
 
   return (

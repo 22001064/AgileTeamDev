@@ -2,20 +2,29 @@ import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import Sidebar from '../components/dashboard';
 import {
-  PieChart, Pie, Tooltip, Legend, Cell,
-  BarChart, Bar, XAxis, YAxis, CartesianGrid,
+  PieChart,
+  Pie,
+  Tooltip,
+  Legend,
+  Cell,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
 } from 'recharts';
 
-// Dummy data for the Pie chart (Overview)
+// Pie chart data (match each label to the corresponding color in COLORS)
 const pieData = [
-  { name: 'Completed', value: 12 },
-  { name: 'In Progress', value: 19 },
   { name: 'To Do', value: 7 },
+  { name: 'In Progress', value: 19 },
+  { name: 'Done', value: 12 },
 ];
 
-const COLORS = ['#36A2EB', '#FFCE56', '#FF6384'];
+// Make sure the order here matches the order in pieData
+const COLORS = ['#999', '#2196f3', '#4caf50'];
 
-// Dummy data for the Bar chart (Priority Breakdown)
+// Example bar chart data
 const barData = [
   { name: 'High', value: 5 },
   { name: 'Medium', value: 10 },
@@ -28,6 +37,7 @@ const Overview = () => {
       <Container fluid className="p-4">
         {/* Row for Overview & Recent Activity */}
         <Row className="mb-4">
+          {/* Pie Chart / Overview */}
           <Col md={6}>
             <Card className="h-100">
               <Card.Header>Overview</Card.Header>
@@ -53,6 +63,7 @@ const Overview = () => {
             </Card>
           </Col>
 
+          {/* Recent Activity */}
           <Col md={6}>
             <Card className="h-100">
               <Card.Header>Recent Activity</Card.Header>
@@ -72,6 +83,7 @@ const Overview = () => {
 
         {/* Row for Priority Breakdown & Types of Work */}
         <Row>
+          {/* Bar chart / Priority Breakdown */}
           <Col md={6}>
             <Card className="h-100">
               <Card.Header>Priority Breakdown</Card.Header>
@@ -88,6 +100,7 @@ const Overview = () => {
             </Card>
           </Col>
 
+          {/* Types of work */}
           <Col md={6}>
             <Card className="h-100">
               <Card.Header>Types of Work</Card.Header>

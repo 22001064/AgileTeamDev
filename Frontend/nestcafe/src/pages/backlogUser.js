@@ -3,7 +3,7 @@ import { Container, Table, Modal, Form, Button, Badge } from 'react-bootstrap';
 import Dashboard from '../components/dashboard';
 
 const BacklogUser = () => {
-  // Initial dummy tasks including priority and due date
+  // Initial dummy tasks (existing tasks may have varied statuses)
   const [tasks, setTasks] = useState([
     { id: 1, task: 'Implement login functionality', assignee: 'Alice', status: 'To Do', priority: 'High', dueDate: '2025-03-15' },
     { id: 2, task: 'Design dashboard layout', assignee: 'Bob', status: 'In Progress', priority: 'Medium', dueDate: '2025-03-20' },
@@ -12,21 +12,19 @@ const BacklogUser = () => {
 
   // Modal state for adding a new task
   const [showModal, setShowModal] = useState(false);
-  // New task info (status defaults to "To Do")
+  // New task state: no status field because new tasks default to "To Do"
   const [newTask, setNewTask] = useState({ task: '', assignee: '', priority: 'Low', dueDate: '' });
 
-  // Open the Add Task modal (triggered from the Dashboard button)
-  const openAddTaskModal = () => {
-    setShowModal(true);
-  };
+  // Open modal from the Dashboard "Add Task" button
+  const openAddTaskModal = () => setShowModal(true);
 
-  // Handle changes for the Add Task modal form fields
+  // Handle modal field changes
   const handleModalChange = (e) => {
     const { name, value } = e.target;
     setNewTask((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle adding a new task (status defaults to "To Do")
+  // Add a new task (defaults status to "To Do")
   const handleAddTask = () => {
     const id = tasks.length ? tasks[tasks.length - 1].id + 1 : 1;
     const taskToAdd = { id, ...newTask, status: 'To Do' };
@@ -35,10 +33,24 @@ const BacklogUser = () => {
     setShowModal(false);
   };
 
-  // Handle changing the status of an existing task
+  // Allow status changes for existing tasks
   const handleStatusChange = (id, newStatus) => {
     setTasks(tasks.map(task => task.id === id ? { ...task, status: newStatus } : task));
   };
+
+  // Returns a background color based on the status
+  function getStatusColor(status) {
+    switch (status) {
+      case 'To Do':
+        return '#999'; // orange
+      case 'In Progress':
+        return '#36a2eb'; // blue
+      case 'Complete':
+        return '#4caf50'; // green
+      default:
+        return '#999';    // fallback grey
+    }
+  }
 
   return (
     <>
@@ -75,15 +87,21 @@ const BacklogUser = () => {
                   {/* Due Date */}
                   <td>{task.dueDate}</td>
                   
-                  {/* Editable Task Status */}
+                  {/* Status cell with a styled dropdown */}
                   <td>
                     <Form.Select
                       value={task.status}
                       onChange={(e) => handleStatusChange(task.id, e.target.value)}
+                      style={{
+                        backgroundColor: getStatusColor(task.status),
+                        color: '#fff',
+                        fontWeight: 'bold',
+                        border: 'none'
+                      }}
                     >
-                      <option value="To Do">To Do</option>
-                      <option value="In Progress">In Progress</option>
-                      <option value="Complete">Complete</option>
+                      <option value="To Do" style={{ backgroundColor: '#999', color: '#fff' }}>To Do</option>
+                      <option value="In Progress" style={{ backgroundColor: '#36a2eb', color: '#fff' }}>In Progress</option>
+                      <option value="Complete" style={{ backgroundColor: '#4caf50', color: '#fff' }}>Complete</option>
                     </Form.Select>
                   </td>
                 </tr>
@@ -93,7 +111,7 @@ const BacklogUser = () => {
         </Container>
       </Dashboard>
 
-      {/* Add Task Modal */}
+      {/* Modal for adding a new task */}
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Add New Task</Modal.Title>
