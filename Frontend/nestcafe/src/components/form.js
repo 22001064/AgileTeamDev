@@ -36,17 +36,17 @@ const UserForm = () => {
             const data = await response.json();
     
             if (response.ok) {
-                alert('Login successful: ${data.role}');
+                alert(`Login successful: ${data.role}`);
                 if (data.role === 'admin') {
                     navigate("/nestcafe/pages/overview");
                 } else {
                     navigate("/nestcafe/pages/ToDO");
                 }
             } else {
-                alert('Error: ${data.error}');
+                alert(`Error: ${data.error}`);
             }
         } catch (err) {
-            alert('Unexpected error: ${err.message}');
+            alert(`Unexpected error: ${err.message}`);
         }
     
         setValidated(true);
