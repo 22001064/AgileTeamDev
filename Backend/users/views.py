@@ -8,7 +8,7 @@ from django.http import HttpResponse
 def home_view(request):
     return HttpResponse("Welcome to the NestCafe API backend.")
 
-@csrf_exempt  # Allows POST requests from your frontend without CSRF token for now (you can improve this later)
+@csrf_exempt  # Allows POST requests from frontend without CSRF token for now
 def login_view(request):
     if request.method == "POST":
         try:
