@@ -10,13 +10,13 @@ def run():
         {
             "username": "admin1@example.com",
             "email": "admin1@example.com",
-            "password": "adminpass123",
+            "password": "adminpass123,",
             "role": "admin"
         },
         {
             "username": "user1@example.com",
             "email": "user1@example.com",
-            "password": "userpass123",
+            "password": "userpass123,",
             "role": "user"
         }
     ]
@@ -38,7 +38,7 @@ def run():
         CustomUser.objects.create_superuser(
             username="superadmin",
             email="superadmin@example.com",
-            password="superpass123",
+            password="superpass123,",
             role="admin"
         )
         print("Superuser 'superadmin' created")
