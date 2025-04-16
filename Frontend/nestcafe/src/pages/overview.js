@@ -1,37 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import Sidebar from '../components/dashboard';
 import {
-  PieChart,
-  Pie,
-  Tooltip,
-  Legend,
-  Cell,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
+  PieChart, Pie, Tooltip, Legend, Cell,
+  BarChart, Bar, XAxis, YAxis, CartesianGrid
 } from 'recharts';
-
-// Pie chart data (match each label to the corresponding color in COLORS)
-const pieData = [
-  { name: 'To Do', value: 7 },
-  { name: 'In Progress', value: 19 },
-  { name: 'Done', value: 12 },
-];
 
 // Make sure the order here matches the order in pieData
 const COLORS = ['#999', '#2196f3', '#4caf50'];
 
-// Example bar chart data
-const barData = [
-  { name: 'High', value: 5 },
-  { name: 'Medium', value: 10 },
-  { name: 'Low', value: 3 },
-];
-
 const Overview = () => {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/tasks/')
+      .then(res => res.json())
+      .then(data => setTasks(data));
+  }, []);
+
+  const getCount = (key, value) => tasks.filter(t => t[key] === value).length;
+
+  // Pie chart data (match each label to the corresponding color in COLORS)
+  const pieData = [
+    { name: 'To Do', value: getCount('status', 'To Do') },
+    { name: 'In Progress', value: getCount('status', 'In Progress') },
+    { name: 'Complete', value: getCount('status', 'Complete') },
+  ];
+
+  // Example bar chart data
+  const barData = [
+    { name: 'High', value: getCount('priority', 'High') },
+    { name: 'Medium', value: getCount('priority', 'Medium') },
+    { name: 'Low', value: getCount('priority', 'Low') },
+  ];
+
   return (
     <Sidebar>
       <Container fluid className="p-4">

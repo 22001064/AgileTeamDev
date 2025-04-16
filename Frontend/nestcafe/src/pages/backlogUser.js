@@ -1,41 +1,102 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Table, Modal, Form, Button, Badge } from 'react-bootstrap';
 import Dashboard from '../components/dashboard';
 
 const BacklogUser = () => {
   // Initial dummy tasks (existing tasks may have varied statuses)
-  const [tasks, setTasks] = useState([
-    { id: 1, task: 'Implement login functionality', assignee: 'Alice', status: 'To Do', priority: 'High', dueDate: '2025-03-15' },
-    { id: 2, task: 'Design dashboard layout', assignee: 'Bob', status: 'In Progress', priority: 'Medium', dueDate: '2025-03-20' },
-    { id: 3, task: 'Set up database schema', assignee: 'Charlie', status: 'Complete', priority: 'Low', dueDate: '2025-03-10' },
-  ]);
+  const [tasks, setTasks] = useState([]);
 
   // Modal state for adding a new task
   const [showModal, setShowModal] = useState(false);
   // New task state: no status field because new tasks default to "To Do"
   const [newTask, setNewTask] = useState({ task: '', assignee: '', priority: 'Low', dueDate: '' });
+  // State for editing an existing task (if needed)
+  const [editingTaskId, setEditingTaskId] = useState(null);
 
-  // Open modal from the Dashboard "Add Task" button
-  const openAddTaskModal = () => setShowModal(true);
+  // Fetch tasks from the backend
+  useEffect(() => {
+    fetch('http://localhost:8000/tasks/')
+      .then((response) => response.json())
+      .then((data) => setTasks(data));
+  }, []);
 
-  // Handle modal field changes
+  // Opens the modal for adding a new task
+  // Resets the new task state and close the modal
+  const openAddTaskModal = () => {
+    setNewTask({
+      task: '',
+      assignee: '',
+      priority: 'Low',
+      dueDate: '',
+      status: 'To Do'
+    });
+    setEditingTaskId(null);
+    setShowModal(true);
+  };
+
+  // Handles modal field changes
   const handleModalChange = (e) => {
     const { name, value } = e.target;
     setNewTask((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Add a new task (defaults status to "To Do")
+  // Handles adding a new task or updating an existing one
   const handleAddTask = () => {
-    const id = tasks.length ? tasks[tasks.length - 1].id + 1 : 1;
-    const taskToAdd = { id, ...newTask, status: 'To Do' };
-    setTasks([...tasks, taskToAdd]);
-    setNewTask({ task: '', assignee: '', priority: 'Low', dueDate: '' });
-    setShowModal(false);
+    const url = editingTaskId
+      ? `http://localhost:8000/tasks/${editingTaskId}/`
+      : 'http://localhost:8000/tasks/';
+    const method = editingTaskId ? 'PUT' : 'POST';
+
+    fetch(url, {
+      method,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newTask),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (editingTaskId) {
+          setTasks((prev) =>
+            prev.map((t) => (t.id === editingTaskId ? { ...newTask, id: t.id } : t))
+          );
+        } else {
+          setTasks((prev) => [...prev, { ...newTask, id: data.id }]);
+        }
+        setNewTask({ task: '', assignee: '', priority: 'Low', dueDate: '', status: 'To Do' });
+        setEditingTaskId(null);
+        setShowModal(false);
+      });
+  };
+
+  // Handles editing an existing task
+  const handleEditTask = (task) => {
+    setNewTask(task);
+    setEditingTaskId(task.id);
+    setShowModal(true);
+  };
+
+  // Handles deleting a task
+  const handleDeleteTask = (id) => {
+    fetch(`http://localhost:8000/tasks/${id}/`, {
+      method: 'DELETE',
+    })
+      .then((res) => res.json())
+      .then(() => {
+        setTasks((prev) => prev.filter((task) => task.id !== id));
+      });
   };
 
   // Allow status changes for existing tasks
   const handleStatusChange = (id, newStatus) => {
-    setTasks(tasks.map(task => task.id === id ? { ...task, status: newStatus } : task));
+    const updatedTask = tasks.find(t => t.id === id);
+    fetch(`http://localhost:8000/tasks/${id}/`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...updatedTask, status: newStatus })
+    })
+      .then(res => res.json())
+      .then(() => {
+        setTasks(tasks.map(task => task.id === id ? { ...task, status: newStatus } : task));
+      });
   };
 
   // Returns a background color based on the status
@@ -65,6 +126,7 @@ const BacklogUser = () => {
                 <th>Priority</th>
                 <th>Due Date</th>
                 <th>Status</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -99,10 +161,27 @@ const BacklogUser = () => {
                         border: 'none'
                       }}
                     >
-                      <option value="To Do" style={{ backgroundColor: '#999', color: '#fff' }}>To Do</option>
-                      <option value="In Progress" style={{ backgroundColor: '#36a2eb', color: '#fff' }}>In Progress</option>
-                      <option value="Complete" style={{ backgroundColor: '#4caf50', color: '#fff' }}>Complete</option>
+                      <option value="To Do">To Do</option>
+                      <option value="In Progress">In Progress</option>
+                      <option value="Complete">Complete</option>
                     </Form.Select>
+                  </td>
+                  <td>
+                    <Button
+                      size="sm"
+                      variant="outline-primary"
+                      className="me-2"
+                      onClick={() => handleEditTask(task)}
+                    >
+                      Edit
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline-danger"
+                      onClick={() => handleDeleteTask(task.id)}
+                    >
+                      Delete
+                    </Button>
                   </td>
                 </tr>
               ))}
@@ -112,9 +191,13 @@ const BacklogUser = () => {
       </Dashboard>
 
       {/* Modal for adding a new task */}
-      <Modal show={showModal} onHide={() => setShowModal(false)}>
+      <Modal show={showModal} onHide={() => {
+        setShowModal(false);
+        setNewTask({ task: '', assignee: '', priority: 'Low', dueDate: '', status: 'To Do' });
+        setEditingTaskId(null);
+      }}>
         <Modal.Header closeButton>
-          <Modal.Title>Add New Task</Modal.Title>
+          <Modal.Title>{editingTaskId ? 'Edit Task' : 'Add New Task'}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -163,11 +246,15 @@ const BacklogUser = () => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowModal(false)}>
+          <Button variant="secondary" onClick={() => {
+            setShowModal(false);
+            setNewTask({ task: '', assignee: '', priority: 'Low', dueDate: '', status: 'To Do' });
+            setEditingTaskId(null);
+          }}>
             Cancel
           </Button>
           <Button variant="primary" onClick={handleAddTask}>
-            Add Task
+            {editingTaskId ? 'Update Task' : 'Add Task'}
           </Button>
         </Modal.Footer>
       </Modal>

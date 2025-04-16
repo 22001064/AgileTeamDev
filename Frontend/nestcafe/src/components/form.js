@@ -16,41 +16,39 @@ const UserForm = () => {
     const [role, setRole] = useState('user');
     const navigate = useNavigate();
 
-    const handleFormSubmit = async (event) => {
+    const handleFormSubmit = (event, role) => {
         event.preventDefault();
         const form = event.currentTarget;
     
         if (form.checkValidity() === false) {
             event.stopPropagation();
-            setValidated(true);
-            return;
-        }
+        } else {console.log({ email, password, rememberMe, role });
     
-        try {
-            const response = await fetch('http://localhost:8000/api/users/login/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username: email, password, remember_me: rememberMe })
-            });
-    
-            const data = await response.json();
-    
-            if (response.ok) {
-                alert(`Login successful: ${data.role}`);
-                if (data.role === 'admin') {
-                    navigate("/nestcafe/pages/overview");
+            fetch("http://localhost:8000/api/users/login/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    username: email,
+                    password: password,
+                    remember_me: rememberMe,
+                    role: role
+                }),
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.role === role) {
+                    alert("Login successful!");
+                    if (role === "admin") navigate("/nestcafe/pages/overview");
+                    else navigate("/nestcafe/pages/ToDO");
                 } else {
-                    navigate("/nestcafe/pages/ToDO");
+                    alert("Unauthorized login attempt: Wrong role.");
                 }
-            } else {
-                alert(`Error: ${data.error}`);
-            }
-        } catch (err) {
-            alert(`Unexpected error: ${err.message}`);
+            })
+            .catch((err) => console.error("Login error", err));
         }
     
         setValidated(true);
-    };    
+    };  
 
     return (
         <div className='form-area rounded'>
@@ -64,7 +62,7 @@ const UserForm = () => {
                 >
                     {['user', 'admin'].map((roleTab) => (
                         <Tab eventKey={roleTab} title={roleTab.charAt(0).toUpperCase() + roleTab.slice(1)} key={roleTab}>
-                            <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+                            <Form noValidate validated={validated} onSubmit={(e) => handleFormSubmit(e, role)}>
                                 <Row className="mb-3">
                                     <Form.Group as={Col} md="12">
                                         <Form.Label>Email</Form.Label>

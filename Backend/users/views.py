@@ -16,25 +16,29 @@ def login_view(request):
             username = data.get("username")
             password = data.get("password")
             remember_me = data.get("remember_me", False)
+            role = data.get("role")
 
             user = authenticate(request, username=username, password=password)
 
             if user is not None:
+                if user.role != role:
+                    return JsonResponse({"error": f"You are not authorized to log in as {role}."}, status=403)
+
                 if user.role == "admin" and remember_me:
                     return JsonResponse({"error": "Admins are not allowed to use Remember Me."}, status=403)
 
                 login(request, user)
 
                 # Set session expiry depending on remember_me
-                if remember_me:
-                    request.session.set_expiry(604800)  # 7 days
-                else:
-                    request.session.set_expiry(3600)  # 1 hour
+                request.session.set_expiry(604800 if remember_me else 3600)  # 604800 = 7 days , 3600 = 1 hour
 
-                return JsonResponse({"message": "Login successful", "user": user.username, "role": user.role})
+                return JsonResponse({
+                    "message": "Login successful",
+                    "user": user.username,
+                    "role": user.role
+                })
 
-            else:
-                return JsonResponse({"error": "Invalid username or password"}, status=401)
+            return JsonResponse({"error": "Invalid username or password"}, status=401)
 
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=400)
