@@ -3,6 +3,7 @@ This project is developed using Agile methodology with iterative sprints. The go
 
 We follow Agile best practices, including sprint planning, weekly standups, retrospectives, and continuous delivery. Work is tracked using [GitHub Projects / Jira], and CI/CD is handled with GitHub Actions.
 
+TEST TO SEE IF C1 WORKS
 
 ## 📅 Agile Process
 - 🕒 **Sprints:** 2-week iterations / 1-week iterations
