@@ -16,7 +16,7 @@ const Dashboard = ({ children, onAddTask }) => {
     <Container fluid className="vh-100 d-flex flex-column">
       {/* Header */}
       <Row className="bg-light p-3 align-items-center">
-        <Col md={3} className="fw-bold">PROJECT NAME</Col>
+        <Col md={3} className="fw-bold">NestCafe</Col>
         <Col md={6}>
           <InputGroup>
             <FormControl placeholder="SEARCH BAR" />
