@@ -6,7 +6,7 @@ import json
 @csrf_exempt
 def task_list(request):
     if request.method == "GET":
-        tasks = list(Task.objects.all().values('id', 'task', 'status', 'priority', 'assignee', 'start', 'end', 'due_date'))
+        tasks = list(Task.objects.all().values('id', 'task', 'status', 'priority', 'assignee', 'type', 'start', 'end', 'due_date'))
         return JsonResponse(tasks, safe=False)
 
     elif request.method == "POST":
@@ -15,6 +15,7 @@ def task_list(request):
             task=data.get("task"),
             assignee=data.get("assignee"),
             status=data.get("status", "To Do"),
+            type=data.get("type", "Task"),
             priority=data.get("priority", "Low"),
             start=data.get("start"),
             end=data.get("end"),
@@ -37,6 +38,7 @@ def task_detail(request, task_id):
         task.assignee = data.get("assignee", task.assignee)
         task.status = data.get("status", task.status)
         task.due_date = data.get("due_date", task.due_date)
+        task.type = data.get("type", task.type)
         task.priority = data.get("priority", task.priority)
         task.start = data.get("start", task.start)
         task.end = data.get("end", task.end)

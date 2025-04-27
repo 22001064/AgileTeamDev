@@ -7,12 +7,19 @@ class Task(models.Model):
         ('Complete', 'Complete'),
     ]
     
+    TYPE_CHOICES = [
+        ('Task', 'Task'),
+        ('Bug', 'Bug'),
+        ('Feature', 'Feature'),
+    ]
+    
     task = models.CharField(max_length=255)
     assignee = models.CharField(max_length=100)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='To Do')
+    type = models.CharField(max_length=20, choices=TYPE_CHOICES, default='Task')
     priority = models.CharField(max_length=10, default='Low')
     due_date = models.DateField(null=True, blank=True)
-
+    
     start = models.DateField(null=True, blank=True)
     end = models.DateField(null=True, blank=True)
     

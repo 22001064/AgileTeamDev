@@ -9,7 +9,7 @@ const BacklogUser = () => {
   // Modal state for adding a new task
   const [showModal, setShowModal] = useState(false);
   // New task state: no status field because new tasks default to "To Do"
-  const [newTask, setNewTask] = useState({ task: '', assignee: '', priority: 'Low', dueDate: '' });
+  const [newTask, setNewTask] = useState({ task: '', assignee: '', type: 'Task', priority: 'Low', dueDate: '', status: 'To Do' });
   // State for editing an existing task (if needed)
   const [editingTaskId, setEditingTaskId] = useState(null);
 
@@ -220,6 +220,18 @@ const BacklogUser = () => {
                 value={newTask.assignee}
                 onChange={handleModalChange}
               />
+            </Form.Group>
+            <Form.Group controlId="formType" className="mb-3">
+              <Form.Label>Type</Form.Label>
+              <Form.Select
+                name="type"
+                value={newTask.type}
+                onChange={handleModalChange}
+              >
+                <option value="Task">Task</option>
+                <option value="Bug">Bug</option>
+                <option value="Feature">Feature</option>
+              </Form.Select>
             </Form.Group>
             <Form.Group controlId="formPriority" className="mb-3">
               <Form.Label>Priority</Form.Label>
