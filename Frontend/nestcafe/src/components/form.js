@@ -58,7 +58,7 @@ const UserForm = () => {
                     defaultActiveKey="user"
                     id="uncontrolled-tab-example"
                     className="mb-3"
-                    style={{ background: '#9c8386' }}
+                    style={{ background: '#99848591' }}
                     onSelect={(key) => setRole(key)}
                 >
                     {['user', 'admin'].map((roleTab) => (
