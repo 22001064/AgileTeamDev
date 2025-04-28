@@ -31,7 +31,8 @@ Displays error feedback like "Unauthorized login attempt: Wrong role."
 
 Includes real-time email and password validation.
 
-(Insert screenshot here showing login page error.)
+![image](https://github.com/user-attachments/assets/d64e9206-2a2f-4bf7-928a-34c4571e382c)
+
 
 ## Task Management (Backlog Page)
 View, edit, and update tasks with assignee, status, priority, and due date fields.
@@ -50,7 +51,8 @@ A table listing types of work.
 
 A recent activity list.
 
-(Insert screenshot here showing dashboard overview.)
+![image](https://github.com/user-attachments/assets/07c41bac-3d49-4373-9933-353cc2affda8)
+
 
 ## Timeline View
 Displays tasks across a calendar grid to visualize durations and workloads.
