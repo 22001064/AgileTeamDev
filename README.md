@@ -5,7 +5,7 @@ The NestCafe web app includes a range of user-focused features to support agile 
 ## Navigation Menu
 A fixed sidebar on the left allows users to easily switch between pages: Overview, Summary, Backlog, and Timeline.
 
-The selected page is highlighted in blue for clear visibility.
+The selected page is highlighted for clear visibility.
 
 ![image](https://github.com/user-attachments/assets/c22ed925-5a1e-4d59-96c2-2df66d0a49b6)
 
@@ -64,7 +64,7 @@ Displays tasks across a calendar grid to visualize durations and workloads.
 The NestCafe application was deployed locally for development and testing purposes.
 
 ## Local Deployment
-Follow this aspects to navigate to the frontend:
+Follow this commands to ensure the frontend works:
 
 bash
 Copy
@@ -84,7 +84,7 @@ Edit
 npm start
 Open your browser:
 
-arduino
+
 Copy
 Edit
 http://localhost:3000
