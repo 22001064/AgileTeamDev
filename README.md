@@ -21,7 +21,8 @@ An "Add a Task" button for quickly creating new entries.
 
 A Username area with a logout button.
 
-(Insert screenshot here showing the top navigation bar.)
+![image](https://github.com/user-attachments/assets/e4bb7e12-dd9f-46b5-9914-1e912bd1551e)
+
 
 Authentication (Login Page)
 Supports user role verification, ensuring correct access levels.
@@ -35,7 +36,8 @@ Includes real-time email and password validation.
 Task Management (Backlog Page)
 View, edit, and update tasks with assignee, status, priority, and due date fields.
 
-(Insert screenshot here showing backlog page.)
+![image](https://github.com/user-attachments/assets/96c80200-cb87-45a1-816f-4d61c843e381)
+
 
 Overview Dashboard
 Summarizes project activity with:
@@ -53,7 +55,8 @@ A recent activity list.
 Timeline View
 Displays tasks across a calendar grid to visualize durations and workloads.
 
-(Insert screenshot here showing the timeline page.)
+![image](https://github.com/user-attachments/assets/9738337b-e630-42fa-86c0-9d274b403cd9)
+
 
 Deployment
 The NestCafe application was deployed locally for development and testing purposes.
