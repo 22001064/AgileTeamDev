@@ -1,4 +1,5 @@
 Features
+
 The NestCafe web app includes a range of user-focused features to support agile team management:
 
 Navigation Menu
@@ -6,7 +7,8 @@ A fixed sidebar on the left allows users to easily switch between pages: Overvie
 
 The selected page is highlighted in blue for clear visibility.
 
-(Insert screenshot here showing the sidebar menu.)
+![image](https://github.com/user-attachments/assets/c22ed925-5a1e-4d59-96c2-2df66d0a49b6)
+
 
 Top Navigation Bar
 The top bar provides quick access to:
