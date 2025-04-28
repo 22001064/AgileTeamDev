@@ -118,7 +118,16 @@ Known Minor Issues
 The sidebar does not auto-collapse on mobile devices after selection.
 
 
-## Credits
+## Tools and Technologies
+
+- **React** — JavaScript library for building the user interface.
+- **Node.js** — Server-side JavaScript runtime.
+- **Express.js** — Web server framework for Node.js.
+- **MongoDB** — NoSQL database for storing users, tasks, and timeline data.
+- **Bootstrap** — CSS framework for responsive design.
+- **Chart.js** and **Recharts** — Used for generating project graphs (pie charts, bar graphs).
+- **FontAwesome** — For UI icons.
+- **GitHub** — Version control and project hosting.
 
 ## Contributors
 Project owner: Rodrigo was the project owner and managed the team
@@ -126,8 +135,6 @@ Scrum Master: Rodrigo was a scrum master and helped with managing the project
 Backend: Rodrigo helped create the backend
 Readme: Rodrigo created the readme
 
-
-## Backend Development: Server-side API creation, database handling, authentication logic.
 
 ## Testing and Debugging:
 
