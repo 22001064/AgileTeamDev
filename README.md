@@ -1,13 +1,13 @@
-## 🧭 Overview
+##  Overview
 This project is developed using Agile methodology with iterative sprints. The goal is to build an interface that will help the client ...
 
 We follow Agile best practices, including sprint planning, weekly standups, retrospectives, and continuous delivery. Work is tracked using [GitHub Projects / Jira], and CI/CD is handled with GitHub Actions.
 
 
-## 📅 Agile Process
-- 🕒 **Sprints:** 2-week iterations / 1-week iterations
-- 📋 **Tasks Tracked In:** [GitHub Projects / Jira]
-- 🧪 **CI/CD:** GitHub Actions for build, test, and deploy
+##  Agile Process
+-  **Sprints:** 2-week iterations / 1-week iterations
+-  **Tasks Tracked In:** [GitHub Projects / Jira]
+-  **CI/CD:** GitHub Actions for build, test, and deploy
 
 
 
