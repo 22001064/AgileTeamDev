@@ -1,4 +1,4 @@
-Features
+# Main Title Features
 
 The NestCafe web app includes a range of user-focused features to support agile team management:
 
