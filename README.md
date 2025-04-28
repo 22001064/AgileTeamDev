@@ -1,27 +1,4 @@
 Features
-![image](https://github.com/user-attachments/assets/dcc06097-cf7f-4f72-bfee-9c51c22b06b2)
-The header element of the website is complete with the Nestcafe logo, which is consistent throughout the website. 
-
-The NestCafe web application presents a clean and modern user interface, focusing on clarity and ease of use. A neutral color palette consisting mainly of beige tones is used throughout the site, giving it a warm and professional look while ensuring excellent contrast and readability.
-
-Each page follows a consistent layout:
-
-A fixed top navigation bar that provides quick access to key functions such as search, task creation, support, and logout.
-
-A left-hand side vertical menu to navigate easily between "Overview," "Summary," "Backlog," and "Timeline" pages.
-
-Main content areas that vary based on the page selected, displaying tables, forms, or visual graphs in a card-style layout.
-
-Typography emphasizes legibility with clean, sans-serif fonts and clear section titles like "Timeline Page" or "Overview," helping users to quickly understand the purpose of each page.
-
-Imagery and icons are minimal but effectively used, such as profile avatars, loading indicators, and task status labels. Dropdowns, graphs, and task cards maintain a professional and polished appearance through consistent padding, hover effects, and borders.
-
-The responsive design ensures that the platform remains usable across different devices. Buttons such as "Add a Task," "Add Timeline Event," and form inputs maintain appropriate sizing for ease of interaction both on desktop and smaller screens.
-
-Visual feedback, such as validation errors and modals (e.g., unauthorized login attempt warnings), are styled consistently to match the overall design, ensuring users are properly guided throughout the application.
-
-
-Features
 The NestCafe web app includes a range of user-focused features to support agile team management:
 
 Navigation Menu
@@ -29,7 +6,7 @@ A fixed sidebar on the left allows users to easily switch between pages: Overvie
 
 The selected page is highlighted in blue for clear visibility.
 
-📸 Place an image here showing the sidebar menu active (like your screenshot showing "Timeline" selected)
+(Insert screenshot here showing the sidebar menu.)
 
 Top Navigation Bar
 The top bar provides quick access to:
@@ -42,55 +19,51 @@ An "Add a Task" button for quickly creating new entries.
 
 A Username area with a logout button.
 
-📸 Place an image here showing the top bar (showing Search bar, Add Task, Support icon, Username/Logout)
+(Insert screenshot here showing the top navigation bar.)
 
 Authentication (Login Page)
-The login system supports user role verification, ensuring correct access levels.
+Supports user role verification, ensuring correct access levels.
 
-Users receive clear error feedback if login fails, including "Unauthorized login attempt: Wrong role" messages.
+Displays error feedback like "Unauthorized login attempt: Wrong role."
 
-Validation is in place for email and password formats.
+Includes real-time email and password validation.
 
-📸 Place an image here showing the login form with the error or validation messages
+(Insert screenshot here showing login page error.)
 
 Task Management (Backlog Page)
-Users can view, edit, and update tasks directly from the backlog.
+View, edit, and update tasks with assignee, status, priority, and due date fields.
 
-Tasks include details like Assignee, Status (To Do, In Progress, Complete), Priority, and Due Date.
-
-📸 Place an image here showing the Backlog page with the task list and Edit Task popup
+(Insert screenshot here showing backlog page.)
 
 Overview Dashboard
-The Overview page features:
+Summarizes project activity with:
 
-A pie chart summarizing tasks by status (To Do, In Progress, Complete).
+A pie chart of task statuses.
 
-A bar chart breaking down tasks by priority (High, Medium, Low).
+A bar chart showing priority distribution.
 
-A table showing the type of work (Bug, Task, Feature).
+A table listing types of work.
 
-A recent activity list for quick updates.
+A recent activity list.
 
-📸 Place an image here showing the full dashboard overview (the one with pie chart, bar graph, table, and activity list)
+(Insert screenshot here showing dashboard overview.)
 
 Timeline View
-The Timeline page displays tasks across a calendar-like grid, showing the duration of assigned tasks across dates.
+Displays tasks across a calendar grid to visualize durations and workloads.
 
-📸 Place an image here showing the Timeline view
+(Insert screenshot here showing the timeline page.)
 
 Deployment
-The NestCafe application was deployed locally for development and testing purposes. The setup involves a frontend React application connected to a backend server.
+The NestCafe application was deployed locally for development and testing purposes.
 
-Local Deployment Process
-To run the project locally, follow these steps:
-
+Local Deployment
 Clone the repository:
 
 bash
 Copy
 Edit
 git clone https://github.com/yourusername/NestCafe.git
-Navigate to the frontend folder:
+Navigate to the frontend:
 
 bash
 Copy
@@ -102,101 +75,78 @@ bash
 Copy
 Edit
 npm install
-Start the development server:
+Run the development server:
 
 bash
 Copy
 Edit
 npm start
-Open your browser and navigate to:
+Open your browser:
 
 arduino
 Copy
 Edit
 http://localhost:3000
-to view the running application.
-
-📸 (Optional):
-You can place a screenshot here showing the terminal after npm start, where it says "compiled successfully" or "running on localhost:3000" if you want.
+(Insert screenshot here showing terminal after npm start.)
 
 Production Deployment (Optional)
-If deploying to a production environment (such as Vercel, Netlify, or a private server), a production build can be generated:
-
-Create the build folder:
+Build production files:
 
 bash
 Copy
 Edit
 npm run build
-Upload the build folder to your hosting service of choice.
-
-📸 (Optional):
-If you later deploy online, you can also place a screenshot here showing the live site or hosting panel.
-
+Upload the build folder to your hosting service (e.g., Vercel, Netlify).
 
 Bugs
-Throughout development and testing of the NestCafe application, a few bugs were encountered and addressed:
-
 Bug Fixes and Improvements
 Unauthorized Login Attempt Warning
-When a user tried to log in with an incorrect role (e.g., logging in as Admin when only User access was allowed), a warning modal appeared stating:
-"Unauthorized login attempt: Wrong role."
-This was handled properly by adding client-side and server-side validation, improving the overall user feedback.
+Proper validation added for incorrect role login attempts.
 
-📸 Place an image here showing the "Unauthorized login attempt: Wrong role" popup
+(Insert screenshot here showing unauthorized login attempt popup.)
 
 Form Validation on Login Page
-Initially, there were issues where users could attempt to log in with invalid email formats or passwords under 8 characters.
-This was fixed by adding real-time validation for email and password fields.
+Real-time email/password format validation implemented.
 
-📸 Place an image here showing the Login page with validation errors
+(Insert screenshot here showing validation errors on login page.)
 
 Task Status Update Alignment
-Minor UI misalignment was detected when updating task statuses in the Backlog page. The dropdown menus were adjusted to align correctly within the task table after editing.
+UI fixes made to properly align task status dropdowns.
 
 Timeline Display Adjustment
-On the Timeline page, initial rendering issues where task bars overlapped were fixed by improving the spacing logic between dates and task durations.
+Improved spacing to prevent task bar overlapping.
 
-Known Minor Issues (Remaining Bugs)
-Navigation menu does not auto-collapse after selection on smaller screens
-When using the sidebar on mobile or small devices, the menu stays open after selecting an item and needs to be manually collapsed.
-However, the page still correctly loads the selected section.
+Known Minor Issues
+Sidebar does not auto-collapse on mobile devices after selection.
 
-📸 (Optional): If you can reproduce this on mobile and want, you can add a small screenshot showing the menu open after selecting an option.
+(Optional: Insert screenshot showing sidebar open on mobile.)
 
 Credits
-The NestCafe application was developed as part of a team project focusing on creating a team management system to support agile workflows.
-
 Contributors
-Frontend Development:
-Responsible for building the user interface, including login pages, dashboard views (Overview, Timeline, Backlog), and handling UI interactions.
+Frontend Development: UI development, authentication pages, dashboard, task management.
 
-Backend Development:
-Focused on server-side functionality, including authentication, user role verification, database operations, and API connections.
+Backend Development: Server-side API creation, database handling, authentication logic.
 
-Testing and Debugging:
-Team members collaborated on cross-browser testing, validation handling, and bug tracking to ensure smooth performance across devices.
+Testing and Debugging: Cross-browser testing, bug reporting, UI adjustments.
 
 Resources Used
-React – Framework used for building the frontend.
+React (Frontend framework)
 
-Node.js / Express.js – Used for backend server operations.
+Node.js / Express.js (Backend server)
 
-MongoDB / Database – For managing user data, tasks, timelines.
+MongoDB (Database)
 
-Bootstrap – For responsive UI elements such as modals, forms, and nav menus.
+Bootstrap (CSS framework for responsive UI)
 
-Chart.js / Recharts – For visual graphs like pie charts and bar charts on the dashboard.
+Chart.js / Recharts (Data visualization libraries)
 
-FontAwesome – For icons in the top navigation and support section.
+FontAwesome (Icons)
 
 External Help
-Stack Overflow – For troubleshooting JavaScript and React-specific issues.
+Stack Overflow, W3Schools, MDN Web Docs for code references.
 
-W3Schools / MDN Web Docs – For referencing HTML, CSS, and JavaScript standards.
+Google Fonts for typography.
 
-Google Fonts – For typography customization.
-
-Freepik (optional) – If you used any external free images.
+Freepik for external images (if used).
 
 
