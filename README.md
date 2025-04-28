@@ -1,8 +1,8 @@
-# Main Title Features
+# Features
 
 The NestCafe web app includes a range of user-focused features to support agile team management:
 
-Navigation Menu
+## Navigation Menu
 A fixed sidebar on the left allows users to easily switch between pages: Overview, Summary, Backlog, and Timeline.
 
 The selected page is highlighted in blue for clear visibility.
@@ -10,7 +10,7 @@ The selected page is highlighted in blue for clear visibility.
 ![image](https://github.com/user-attachments/assets/c22ed925-5a1e-4d59-96c2-2df66d0a49b6)
 
 
-Top Navigation Bar
+## Top Navigation Bar
 The top bar provides quick access to:
 
 A Support section with a user avatar.
@@ -24,7 +24,7 @@ A Username area with a logout button.
 ![image](https://github.com/user-attachments/assets/e4bb7e12-dd9f-46b5-9914-1e912bd1551e)
 
 
-Authentication (Login Page)
+## Authentication (Login Page)
 Supports user role verification, ensuring correct access levels.
 
 Displays error feedback like "Unauthorized login attempt: Wrong role."
@@ -33,13 +33,13 @@ Includes real-time email and password validation.
 
 (Insert screenshot here showing login page error.)
 
-Task Management (Backlog Page)
+## Task Management (Backlog Page)
 View, edit, and update tasks with assignee, status, priority, and due date fields.
 
 ![image](https://github.com/user-attachments/assets/96c80200-cb87-45a1-816f-4d61c843e381)
 
 
-Overview Dashboard
+## Overview Dashboard
 Summarizes project activity with:
 
 A pie chart of task statuses.
@@ -52,13 +52,13 @@ A recent activity list.
 
 (Insert screenshot here showing dashboard overview.)
 
-Timeline View
+## Timeline View
 Displays tasks across a calendar grid to visualize durations and workloads.
 
 ![image](https://github.com/user-attachments/assets/9738337b-e630-42fa-86c0-9d274b403cd9)
 
 
-Deployment
+## Deployment
 The NestCafe application was deployed locally for development and testing purposes.
 
 Local Deployment
@@ -126,13 +126,13 @@ Sidebar does not auto-collapse on mobile devices after selection.
 
 (Optional: Insert screenshot showing sidebar open on mobile.)
 
-Credits
-Contributors
+## Credits
+## Contributors
 Frontend Development: UI development, authentication pages, dashboard, task management.
 
-Backend Development: Server-side API creation, database handling, authentication logic.
+## Backend Development: Server-side API creation, database handling, authentication logic.
 
-Testing and Debugging: Cross-browser testing, bug reporting, UI adjustments.
+## Testing and Debugging: Cross-browser testing, bug reporting, UI adjustments.
 
 Resources Used
 React (Frontend framework)
