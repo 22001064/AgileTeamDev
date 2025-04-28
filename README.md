@@ -97,26 +97,8 @@ To run the Backend:
 
 
 ## Bugs
-Bug Fixes and Improvements
-
-No matter what was done, the timelines were not appearing after reloading the page.
-
-Unauthorized Login Attempt Warning
-Proper validation added for incorrect role login attempts.
-
-Form Validation on Login Page
-Real-time email/password format validation implemented.
-
-
-Task Status Update Alignment
-UI fixes made to properly align task status dropdowns.
-
-Timeline Display Adjustment
-Improved spacing to prevent taskbar overlapping.
-
-Known Minor Issues
-The sidebar does not auto-collapse on mobile devices after selection.
-
+During the project, some bugs emerged as can be observed from the picture below, these bugs were then fixed, as can be seen in green.
+![image](https://github.com/user-attachments/assets/aac72202-492c-44eb-97ce-1618b1e154df)
 
 ## Tools and Technologies
 
