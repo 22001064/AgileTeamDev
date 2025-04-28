@@ -61,7 +61,7 @@ Displays tasks across a calendar grid to visualize durations and workloads.
 ## Deployment
 The NestCafe application was deployed locally for development and testing purposes.
 
-Local Deployment
+## Local Deployment
 Clone the repository:
 
 bash
@@ -103,7 +103,7 @@ Edit
 npm run build
 Upload the build folder to your hosting service (e.g., Vercel, Netlify).
 
-Bugs
+## Bugs
 Bug Fixes and Improvements
 Unauthorized Login Attempt Warning
 Proper validation added for incorrect role login attempts.
