@@ -137,9 +137,18 @@ Filtering options (e.g., by priority or assigned user) are available.
 
 
 
+
+
+
 WIREFRAMES
 
+
+
+
 ![image](https://github.com/user-attachments/assets/ca7c1dba-c371-4a62-a028-e44d4eb929d4)
+
+
+The wireframes were designed in mind with the requests of the client which included using a static image in the home page for example, and keeping the overall design of the pages simple and clean as to not distract from the main goal of the app which is to ensure better task management.
 
 
 
