@@ -64,13 +64,7 @@ Displays tasks across a calendar grid to visualize durations and workloads.
 The NestCafe application was deployed locally for development and testing purposes.
 
 ## Local Deployment
-Clone the repository:
-
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/NestCafe.git
-Navigate to the frontend:
+Follow this aspects to navigate to the frontend:
 
 bash
 Copy
@@ -94,16 +88,13 @@ arduino
 Copy
 Edit
 http://localhost:3000
-(Insert screenshot here showing terminal after npm start.)
+![image](https://github.com/user-attachments/assets/edf8873d-3625-4a1d-8120-24e0da480677)
+![image](https://github.com/user-attachments/assets/5969074c-586f-4a90-a690-0bb53fc3ab20)
 
-Production Deployment (Optional)
-Build production files:
+To run the Backend:
+![image](https://github.com/user-attachments/assets/e12790f4-9632-4a16-b904-eddd6a8e9b25)
+![image](https://github.com/user-attachments/assets/3c71afde-2484-4024-9bed-4e74b5ae48ca)
 
-bash
-Copy
-Edit
-npm run build
-Upload the build folder to your hosting service (e.g., Vercel, Netlify).
 
 ## Bugs
 Bug Fixes and Improvements
