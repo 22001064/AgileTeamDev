@@ -36,13 +36,15 @@ const UserForm = () => {
             })
             .then((res) => res.json())
             .then((data) => {
-                if (data.role === role) {
+                if (data.error) {
+                    alert(data.error);
+                } else if (data.role === role) {
                     alert("Login successful!");
                     localStorage.setItem("userRole", data.role);
                     if (role === "admin") navigate("/nestcafe/pages/overview");
                     else navigate("/nestcafe/pages/ToDO");
                 } else {
-                    alert("Unauthorized login attempt: Wrong role.");
+                    alert("Unauthorized login attempt: Wrong role selected.");
                 }
             })
             .catch((err) => console.error("Login error", err));
