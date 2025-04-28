@@ -98,53 +98,39 @@ To run the Backend:
 
 ## Bugs
 Bug Fixes and Improvements
+
+No matter what was done, the timelines were not appearing after reloading the page.
+
 Unauthorized Login Attempt Warning
 Proper validation added for incorrect role login attempts.
-
-(Insert screenshot here showing unauthorized login attempt popup.)
 
 Form Validation on Login Page
 Real-time email/password format validation implemented.
 
-(Insert screenshot here showing validation errors on login page.)
 
 Task Status Update Alignment
 UI fixes made to properly align task status dropdowns.
 
 Timeline Display Adjustment
-Improved spacing to prevent task bar overlapping.
+Improved spacing to prevent taskbar overlapping.
 
 Known Minor Issues
-Sidebar does not auto-collapse on mobile devices after selection.
+The sidebar does not auto-collapse on mobile devices after selection.
 
-(Optional: Insert screenshot showing sidebar open on mobile.)
 
 ## Credits
+
 ## Contributors
-Frontend Development: UI development, authentication pages, dashboard, task management.
+Project owner: Rodrigo was the project owner and managed the team
+Scrum Master: Rodrigo was a scrum master and helped with managing the project
+Backend: Rodrigo helped create the backend
+Readme: Rodrigo created the readme
+
 
 ## Backend Development: Server-side API creation, database handling, authentication logic.
 
-## Testing and Debugging: Cross-browser testing, bug reporting, UI adjustments.
+## Testing and Debugging:
 
-Resources Used
-React (Frontend framework)
 
-Node.js / Express.js (Backend server)
-
-MongoDB (Database)
-
-Bootstrap (CSS framework for responsive UI)
-
-Chart.js / Recharts (Data visualization libraries)
-
-FontAwesome (Icons)
-
-External Help
-Stack Overflow, W3Schools, MDN Web Docs for code references.
-
-Google Fonts for typography.
-
-Freepik for external images (if used).
 
 
