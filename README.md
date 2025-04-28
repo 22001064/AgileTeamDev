@@ -137,6 +137,11 @@ Readme: Rodrigo created the readme
 
 
 ## Testing and Debugging:
+Comprehensive testing was done as can be seen from the screenshots below:
+![image](https://github.com/user-attachments/assets/0e9bce8b-9577-424f-a90c-82d736c82a71)
+![image](https://github.com/user-attachments/assets/0bef9c72-b292-4c45-9fe3-e0e0ddadfffe)
+
+
 
 
 
