@@ -3,8 +3,6 @@
 ![image](https://github.com/user-attachments/assets/79e59c6a-b8ad-473f-8574-43fabe5707f7)
 
 
-
-
 ### About
 The primary aim of this project was to design and develop a responsive web application that addressed the specific needs of the client’s business. The application was intended to simplify internal processes of setting tasks and enhance communication and interaction with employees.
 
@@ -23,9 +21,6 @@ The primary aim of this project was to design and develop a responsive web appli
 ### Strategy
 
 This is a task management system which is 
-
-
-
 
 
 ## USER STORIES
@@ -166,53 +161,20 @@ User Story: User Logout
 - Filtering options (e.g., by priority or assigned user) are available.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## WIREFRAMES
 
-
-
-
 ![image](https://github.com/user-attachments/assets/b31a574d-703d-4a96-9774-800220d827ad)
-
 
 
 The wireframes were designed in mind with the requests of the client which included using a static image in the home page for example, and keeping the overall design of the pages simple and clean as to not distract from the main goal of the app which is to ensure better task management. As can be seen on the wireframe there are different versions to show the progress made according to the clients requests.
 
 
-
-
-
-
-
-
-
 ## MOOD BOARD
-
-
-
 
 ![image](https://github.com/user-attachments/assets/62bbb235-f72e-45ac-ad41-9f867e443019)
 
 
 The moodboard as can be seen has followed exactly what has been asked which is SIMPLISTIC DESIGN, EASE OF USE, COMPREHENSIVE TOOLS, for the colour scheme the team has decided for colours which suit the logo. The design team has also made sure to choose a readable font while still maintaining professional integrity because it will be used as a task management system.
-
-
-
-
-
 
 
 ## In-Scope features
@@ -337,10 +299,19 @@ During the project, some bugs emerged as can be observed from the picture below,
 - **GitHub** — Version control and project hosting.
 
 ## Contributors
-Project owner: Rodrigo was the project owner and managed the team
-Scrum Master: Rodrigo was a scrum master and helped with managing the project
-Backend: Rodrigo helped create the backend
-Readme: Rodrigo created the readme
+Project Owner: Rodrigo, Ethan, Egle, Bruno, Adam, Sebastian and Elvijs were each the project owner during a sprint and managed the team during these 7 sprints
+
+Scrum Master: Rodrigo were each the scrum master during a sprint and helped with managing the project during these 7 sprints
+
+Frontend: Egle, Bruno, Elvijs, and Ethan were part of the frontend and helped with creating it during these 7 sprints
+
+Backend: Rodrigo, Ethan, and Sebastian helped create the backend during these 7 sprints
+
+Testing: Adam, Ethan and Egle helped create the tests, with Adam and Egle implementing them during these 7 sprints
+
+Designer: Adam, Ethan and Elvijs were the designers at one point during these 7 sprints
+
+Readme: Rodrigo and Sebastian created the readme
 
 
 ## Testing and Debugging:
