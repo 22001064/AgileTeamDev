@@ -313,7 +313,7 @@ Open your browser:
 Copy
 Edit
 http://localhost:3000
-![image](https://github.com/user-attachments/assets/edf8873d-3625-4a1d-8120-24e0da480677)
+![Screenshot 2025-04-28 221909](https://github.com/user-attachments/assets/37bd501a-382f-4781-a153-015adb4a96bd)
 ![image](https://github.com/user-attachments/assets/5969074c-586f-4a90-a690-0bb53fc3ab20)
 
 To run the Backend:
