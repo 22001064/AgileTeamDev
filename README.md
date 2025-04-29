@@ -301,7 +301,7 @@ During the project, some bugs emerged as can be observed from the picture below,
 ## Contributors
 Project Owner: Rodrigo, Ethan, Egle, Bruno, Adam, Sebastian and Elvijs were each the project owner during a sprint and managed the team during these 7 sprints
 
-Scrum Master: Rodrigo were each the scrum master during a sprint and helped with managing the project during these 7 sprints
+Scrum Master: Rodrigo, Ethan, Egle, Bruno, Adam, Sebastian and Elvijs were each the scrum master during a sprint and helped with managing the project during these 7 sprints
 
 Frontend: Egle, Bruno, Elvijs, and Ethan were part of the frontend and helped with creating it during these 7 sprints
 
