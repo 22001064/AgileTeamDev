@@ -303,7 +303,7 @@ Project Owner: Rodrigo, Ethan, Egle, Bruno, Adam, Sebastian and Elvijs were each
 
 Scrum Master: Rodrigo, Ethan, Egle, Bruno, Adam, Sebastian and Elvijs were each the scrum master during a sprint and helped with managing the project during these 7 sprints
 
-Frontend: Egle, Bruno, Elvijs, and Ethan were part of the frontend and helped with creating it during these 7 sprints
+Frontend: Egle, Bruno, Elvijs, Ethan and Sebastian were part of the frontend and helped with creating it during these 7 sprints
 
 Backend: Rodrigo, Ethan, and Sebastian helped create the backend during these 7 sprints
 
