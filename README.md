@@ -257,20 +257,22 @@ bash
 Copy
 Edit
 cd Frontend/nestcafe
+
 Install dependencies:
 
 bash
 Copy
 Edit
 npm install
+
 Run the development server:
 
 bash
 Copy
 Edit
 npm start
-Open your browser:
 
+Open your browser:
 
 Copy
 Edit
