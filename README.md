@@ -2,6 +2,7 @@
 
 ![image](https://github.com/user-attachments/assets/79e59c6a-b8ad-473f-8574-43fabe5707f7)
 
+TEST TO SEE IF C1 WORKS
 
 ### About
 The primary aim of this project was to design and develop a responsive web application that addressed the specific needs of the client’s business. The application was intended to simplify internal processes of setting tasks and enhance communication and interaction with employees.
